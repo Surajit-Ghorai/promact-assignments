@@ -68,6 +68,9 @@ print('after modifying first element of my_list : ', my_list[0])
 my_list.append('The Family')
 print('now the last element of my_list : ', my_list[-1])
 # there are also insert(), extend()
+my_list.insert(1, "orange")
+my_another_list = ["mango", "pineapple", "papaya"]
+my_list.extend(my_another_list)
 
 # removing item
 my_list.pop()  #removing last item
@@ -75,3 +78,59 @@ print('now the last element of my_list : ', my_list[-1])
 my_list.pop(0)  #removing last item
 print('now my_list : ', my_list)
 # also there are remove(), del, clear()
+my_list.remove("orange")
+del my_list[2]
+my_list.clear()
+
+# sort list
+my_list.sort()
+
+
+# python functions
+def say_hello():
+    print('Hello!')
+
+say_hello()
+
+#
+name = input('enter name: ')
+def say_hello(name):
+    print(f'Hello! {name}')
+
+say_hello(name)
+
+# lambda functions
+welcome_message = lambda name : f'Hello!, {name}'
+my_welcome_message = welcome_message(name)
+print(my_welcome_message)
+
+# python oops
+class Intern:
+    def __init__(self, name, intern_id):
+        self.name = name
+        self.intern_id = intern_id
+
+    def __str__(self):
+        return f'Intern name : {self.name} - InternId : {self.intern_id}'
+    
+    def say_about(self):
+        print(f'I am {self.name}')
+        print('I am working asintern at Promact')
+
+intern1 = Intern('Surajit', 16)
+print(intern1)
+intern1.say_about()
+
+class SeniorIntern(Intern):
+    def __init__(self, name, intern_id, exp):
+        super().__init__(name, intern_id)
+        self.exp = exp
+
+    def say_about(self):
+        print(f'I am {self.name}')
+        print('I am working asintern at Promact')
+        print(f'I have experience of {self.exp} years.')
+
+intern2 = SeniorIntern('Aish', 1, 20)
+print(intern2)
+intern2.say_about()
